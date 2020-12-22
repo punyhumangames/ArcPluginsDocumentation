@@ -30,6 +30,8 @@ nav:
         - 'arcinventory/changelogs/1.2.2.113.md'
         - 'arcinventory/changelogs/1.2.1.106.md'
         - 'arcinventory/changelogs/1.2.0.md'
+    - "Arc Teams":
+        - Home: "arcteams/index.md"
 theme:
   name: 'material'
   palette:
