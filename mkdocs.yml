@@ -1,5 +1,5 @@
-site_name: Arc Inventory Documentation
-site_description: 'Documentation for Arc Inventory'
+site_name: Arc Plugins Documentation
+site_description: 'Documentation for the Arc Plugins'
 site_author: 'Puny Human'
 docs_dir: docs/
 repo_name: 'punyhumangames/ArcPluginsDocumentation'
@@ -8,28 +8,34 @@ copyright : Copyright &copy; 2020-2021 Puny Human
 extra_css:
   - stylesheets/extra.css
 nav:
-    - Home: index.md
-    - "Initial Setup": initialsetup.md
-    - "Concepts":
-        - "High Level": "concepts/highlevel.md"
-        - "Inventory": "concepts/inventory.md"
-        - "Item Stacks": "concepts/itemstack.md"
-        - "Item Generators": "concepts/generators.md"
-        - "User Interface": "concepts/ui.md"
-    - Tutorials:
-      - "Simple FPS": "tutorials/simplefps.md"
-      - "Containers": "tutorials/containers.md"
-    - Integrations:
-      - "MoveIt": "integrations/moveit.md"
-    - "Useful Resources": usefulresources.md
-    - Changelogs:
-      - 'changelogs/1.2.2.113.md'
-      - 'changelogs/1.2.1.106.md'
-      - 'changelogs/1.2.0.md'
+    - Home: 
+        - index.md
+        - "Documentation Roadmap": "home/docroadmap.md"
+    - "Arc Inventory":
+      - Home: "arcinventory/index.md"
+      - "Initial Setup": "arcinventory/initialsetup.md"
+      - "Concepts":
+          - "High Level": "arcinventory/concepts/highlevel.md"
+          - "Inventory": "arcinventory/concepts/inventory.md"
+          - "Item Stacks": "arcinventory/concepts/itemstack.md"
+          - "Item Generators": "arcinventory/concepts/generators.md"
+          - "User Interface": "arcinventory/concepts/ui.md"
+      - Tutorials:
+        - "Simple FPS": "arcinventory/tutorials/simplefps.md"
+        - "Containers": "arcinventory/tutorials/containers.md"
+      - Integrations:
+        - "MoveIt": "arcinventory/integrations/moveit.md"
+      - "Useful Resources": "arcinventory/usefulresources.md"
+      - Changelogs:
+        - 'arcinventory/changelogs/1.2.2.113.md'
+        - 'arcinventory/changelogs/1.2.1.106.md'
+        - 'arcinventory/changelogs/1.2.0.md'
 theme:
   name: 'material'
   palette:
     scheme: slate
+  features:
+    - navigation.tabs
 markdown_extensions:
   - abbr
   - admonition
@@ -38,3 +44,5 @@ markdown_extensions:
   - pymdownx.snippets
   - def_list
   - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
