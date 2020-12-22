@@ -6,5 +6,6 @@ repo_name: 'RoyAwesome/doctemplate'
 repo_url: 'https://royawesome.github.io/doctemplate/'
 nav:
     - Home: index.md
+    - SimpleTutoriial: simpletutorial.md
 theme:
   name: 'material'
