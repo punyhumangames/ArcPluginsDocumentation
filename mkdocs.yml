@@ -7,8 +7,22 @@ repo_url: 'https://royawesome.github.io/doctemplate/'
 copyright : Copyright &copy; 2020-2021 Puny Human
 nav:
     - Home: index.md
-    - SimpleTutorial: simpletutorial.md
-    - Abbtest: abbtest.md
+    - "Initial Setup": initialsetup.md
+    - "Concepts":
+        - "High Level": "concepts/highlevel.md"
+        - "Inventory": "concepts/inventory.md"
+        - "Item Stacks": "concepts/itemstack.md"
+        - "Item Generators": "concepts/generators.md"
+        - "User Interface": "concepts/ui.md"
+    - Tutorials:
+      - "Simple FPS": simplefps.md
+    - Integrations:
+      - "MoveIt": "integrations/moveit.md"
+    - "Useful Resources": usefulresources.md
+    - Changelogs:
+      - 'changelogs/1.2.2.113.md'
+      - 'changelogs/1.2.1.106.md'
+      - 'changelogs/1.2.0.md'
 theme:
   name: 'material'
 markdown_extensions:
@@ -17,3 +31,5 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.snippets
+  - def_list
+  - pymdownx.tabbed

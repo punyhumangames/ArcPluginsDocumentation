@@ -22,7 +22,8 @@ No C++ code is gauranteed to compile or work.  Examples are for illustration of 
 
 Blueprint will be described (may add images later).
 
-** Ensure that in the Arc Inventory Settings in the Project Settings, appropriate tags are set for the Bag Slot, Equipment Slot, and Active slot. **
+!!! note
+    Ensure that in the Arc Inventory Settings in the Project Settings, appropriate tags are set for the Bag Slot, Equipment Slot, and Active slot. 
 
 
 
@@ -62,7 +63,7 @@ YourCharacter.cpp
 ```
 
 !!! note
- This setup, with the `static FName InventoryComponentName` and `SetDefaultSubobjectClass` allows you to have a bit of a heirarchy for your character classes.  For example, you can have a base class that uses a basic inventory component and a 'PlayerCharacter' subclass that has an Active inventory component.  It is up to you if you want to go this route.
+    This setup, with the `static FName InventoryComponentName` and `SetDefaultSubobjectClass` allows you to have a bit of a heirarchy for your character classes.  For example, you can have a base class that uses a basic inventory component and a 'PlayerCharacter' subclass that has an Active inventory component.  It is up to you if you want to go this route.
 
 Next, create a new Blueprint Class that is a child of `AYourCharacter`, named BP_YourCharacter.  Verify that you have an Inventory Component on your character.
 
@@ -134,4 +135,4 @@ From there, consult the Example Project for how to set up responding to Drag and
 
 
 
-
+--8<-- "includes/abbreviations.md"
