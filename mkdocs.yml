@@ -5,6 +5,8 @@ docs_dir: docs/
 repo_name: 'RoyAwesome/doctemplate'
 repo_url: 'https://royawesome.github.io/doctemplate/'
 copyright : Copyright &copy; 2020-2021 Puny Human
+extra_css:
+  - stylesheets/extra.css
 nav:
     - Home: index.md
     - "Initial Setup": initialsetup.md
@@ -15,7 +17,8 @@ nav:
         - "Item Generators": "concepts/generators.md"
         - "User Interface": "concepts/ui.md"
     - Tutorials:
-      - "Simple FPS": simplefps.md
+      - "Simple FPS": "tutorials/simplefps.md"
+      - "Containers": "tutorials/containers.md"
     - Integrations:
       - "MoveIt": "integrations/moveit.md"
     - "Useful Resources": usefulresources.md
@@ -25,6 +28,8 @@ nav:
       - 'changelogs/1.2.0.md'
 theme:
   name: 'material'
+  palette:
+    scheme: slate
 markdown_extensions:
   - abbr
   - admonition
