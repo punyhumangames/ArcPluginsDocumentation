@@ -1,9 +1,9 @@
-site_name: Test docs
-site_description: 'A docs test'
-site_author: 'Michael Hausenblas'
+site_name: Arc Inventory Documentation
+site_description: 'Documentation for Arc Inventory'
+site_author: 'Puny Human'
 docs_dir: docs/
-repo_name: 'mhausenblas/mkdocs-template'
-repo_url: 'https://github.com/mhausenblas/mkdocs-template'
+repo_name: 'RoyAwesome/doctemplate'
+repo_url: 'https://royawesome.github.io/doctemplate/'
 nav:
     - Home: index.md
 theme:
