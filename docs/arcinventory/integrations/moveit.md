@@ -66,7 +66,7 @@ From there, Select your Inventory Component, and scroll to the Events section.  
 
 In your OnItemActive handler, cast the `Item Stack` to `MyItemDefinition_Active`.  Call `Get Class Defaults` on the resulting struct to grab the Weapon Attach Data.  Set your Character's `Weapon Info` variable to be that attach data.  
 
-![image](../img/miint/onitemactive.png)
+![image](../../img/miint/onitemactive.png)
 
 Also, in this handler, grab the Held Item Mesh from the class (you may have to select the Get Class Defaults pin and delect it in the details editor) and assign it to your HeldItemMesh component's mesh.
 
@@ -74,7 +74,7 @@ in the OnItemInactive handler, simply set MI Weapon to be an empty struct, and s
 
 Finally, in Functions, hit Override and override the function `Get Weapon Anim Info`.  In there, drag in a getter for your `WeaponInfo` struct and right click on it, select 'Split Struct Pin'. Drag off from `Weapon Info Weapon Pose` an Is Valid check.  If it is not valid, simply return an empty struct.  If it is valid, create a new Return node, and right click on that and Split Struct Pin.  Connect all the pins from your class's weapon struct to the return node's pins, except the `Return Value Weapon Mesh` which should be linked to your `Held Item Mesh` component.
 
-![image](../img/miint/getweaponaniminfo.png)
+![image](../../img/miint/getweaponaniminfo.png)
 
 
 ## Conclusion

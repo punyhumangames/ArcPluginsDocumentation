@@ -17,7 +17,7 @@ Your first step will be to configure the necissary tags for Arc Inventory's inte
 === "Editor"
     In the Unreal Editor, go to View -> Project Settings.  Select the **Arc Inventory Developer Settings** category within Game.
 
-    ![Image](img/initialsetup/configurationpanel.png)
+    ![Image](../img/initialsetup/configurationpanel.png)
 
     !!! bug "Deprecation Notice"
         `Ability Tag Mappings` is deprecated and unused.  It will be removed in future versions of Arc Inventory
