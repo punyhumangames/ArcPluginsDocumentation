@@ -6,3 +6,6 @@ Arc Inventory is a GAS powered Inventory system that talks to your ASC.  Just cr
     ``` cpp
     Try it with code formatting
     ```
+
+
+--8<-- "includes/abbreviations.md"
