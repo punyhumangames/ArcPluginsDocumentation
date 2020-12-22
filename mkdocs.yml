@@ -2,8 +2,8 @@ site_name: Arc Inventory Documentation
 site_description: 'Documentation for Arc Inventory'
 site_author: 'Puny Human'
 docs_dir: docs/
-repo_name: 'RoyAwesome/doctemplate'
-repo_url: 'https://royawesome.github.io/doctemplate/'
+repo_name: 'punyhumangames/ArcPluginsDocumentation'
+repo_url: 'https://punyhumangames.github.io/ArcPluginsDocumentation/'
 copyright : Copyright &copy; 2020-2021 Puny Human
 extra_css:
   - stylesheets/extra.css
