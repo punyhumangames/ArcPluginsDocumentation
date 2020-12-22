@@ -31,3 +31,4 @@ Get it on the Unreal Marketplace: [Marketplace Page](https://www.unrealengine.co
     * \#plugins-support
 
 
+--8<-- "includes/abbreviations.md"

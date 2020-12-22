@@ -18,3 +18,5 @@ Arc Plugins are a collection of plugins published by Puny Human on the Unreal Ma
     [Unreal Marketplace](https://www.unrealengine.com/marketplace/en-US/product/arc-teams) • [Documentation](arcteams/index.md)
 
 And more to come!
+
+--8<-- "includes/abbreviations.md"

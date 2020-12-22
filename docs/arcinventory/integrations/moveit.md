@@ -81,3 +81,5 @@ Finally, in Functions, hit Override and override the function `Get Weapon Anim I
 
 That is it!  MoveIt will now properly animate your character to hold the weapon.
 
+
+--8<-- "includes/abbreviations.md"
