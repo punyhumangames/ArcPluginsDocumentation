@@ -14,7 +14,7 @@ For the UI Section of the tutorial, it assumes you are very familiar with UMG.
 
 This Tutorial uses a mix of C++ and Blueprint.  C++ code will be denoted by a C++ code block like so:
 
-```cpp
+``` cpp
 Code()
 ```
 
@@ -32,7 +32,7 @@ Blueprint will be described (may add images later).
 In your player pawn, Implement the `IArcInventoryInterface` from "Interfaces/ArcInventoryInterface.h".  Do so like this:
 
 YourCharacter.h
-```cpp
+``` cpp
 
 UCLASS()
 class YOUR_API AYourCharacter : public ACharacter, public IArcInventoryInterface /* ASC Interfaces here too */
@@ -50,7 +50,7 @@ public:
 ```
 
 YourCharacter.cpp
-```cpp
+``` cpp
     FName AYourCharacter::InventoryComponentName(TEXT("InventoryComponent"));
 
     AYourCharacter::AYourCharacter(const FObjectInitializer& ObjectInitializer)
@@ -61,7 +61,8 @@ YourCharacter.cpp
     }
 ```
 
-Note: This setup, with the `static FName InventoryComponentName` and `SetDefaultSubobjectClass` allows you to have a bit of a heirarchy for your character classes.  For example, you can have a base class that uses a basic inventory component and a 'PlayerCharacter' subclass that has an Active inventory component.  It is up to you if you want to go this route.
+!!! note
+ This setup, with the `static FName InventoryComponentName` and `SetDefaultSubobjectClass` allows you to have a bit of a heirarchy for your character classes.  For example, you can have a base class that uses a basic inventory component and a 'PlayerCharacter' subclass that has an Active inventory component.  It is up to you if you want to go this route.
 
 Next, create a new Blueprint Class that is a child of `AYourCharacter`, named BP_YourCharacter.  Verify that you have an Inventory Component on your character.
 
