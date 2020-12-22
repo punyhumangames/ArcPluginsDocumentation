@@ -19,7 +19,7 @@ Your first step will be to configure the necissary tags for Arc Inventory's inte
 
     ![Image](img/initialsetup/configurationpanel.png)
 
-    !!! bug
+    !!! bug "Deprecation Notice"
         `Ability Tag Mappings` is deprecated and unused.  It will be removed in future versions of Arc Inventory
 
 
