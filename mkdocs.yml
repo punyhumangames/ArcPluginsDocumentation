@@ -3,7 +3,7 @@ site_description: 'Documentation for the Arc Plugins'
 site_author: 'Puny Human'
 docs_dir: docs/
 repo_name: 'punyhumangames/ArcPluginsDocumentation'
-repo_url: 'https://punyhumangames.github.io/ArcPluginsDocumentation/'
+repo_url: 'https://github.com/punyhumangames/ArcPluginsDocumentation'
 copyright : Copyright &copy; 2020-2021 Puny Human
 extra_css:
   - stylesheets/extra.css
