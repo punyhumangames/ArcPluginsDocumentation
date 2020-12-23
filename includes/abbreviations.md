@@ -5,3 +5,4 @@
 *[ItemStack]: UArcItemStack
 *[slotref]: FArcItemSlotReference
 *[slotrefs]: FArcItemSlotReference
+*[CDO]: Constructor Default Object
