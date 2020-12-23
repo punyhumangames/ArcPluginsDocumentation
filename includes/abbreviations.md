@@ -4,3 +4,4 @@
 *[ItemDef]: UArcItemDefinition
 *[ItemStack]: UArcItemStack
 *[slotref]: FArcItemSlotReference
+*[slotrefs]: FArcItemSlotReference
