@@ -14,10 +14,10 @@ Changes and additions will be posted in `#plugins-announce` channel in discord!
     * [x] Inventory
     * [x] Item Stack
     * [x] Item Generators
-    * [ ] UI
+    * [x] UI
 - Tutorials
     * [x] Basic Integration
-    * [ ] Concepts
+    * [x] Manipulation Concepts
 - Integrations
     * [x] MoveIt
     * [ ] Easy Ballistics
