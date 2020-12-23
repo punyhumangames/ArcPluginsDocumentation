@@ -22,14 +22,15 @@ nav:
           - "User Interface": "arcinventory/concepts/ui.md"
       - Tutorials:
         - "Simple FPS": "arcinventory/tutorials/simplefps.md"
-        - "Containers": "arcinventory/tutorials/containers.md"
+        - "Maniuplating Items": "arcinventory/tutorials/containers.md"
       - Integrations:
         - "MoveIt": "arcinventory/integrations/moveit.md"
       - "Useful Resources": "arcinventory/usefulresources.md"
       - Changelogs:
+        - 'arcinventory/changelogs/1.2.3.md'
         - 'arcinventory/changelogs/1.2.2.113.md'
         - 'arcinventory/changelogs/1.2.1.106.md'
-        - 'arcinventory/changelogs/1.2.0.md'
+        - 'arcinventory/changelogs/1.2.0.115.md'
     - "Arc Teams":
         - Home: "arcteams/index.md"
 theme:
