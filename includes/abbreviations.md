@@ -3,3 +3,4 @@
 *[CMC]: Character Movement Component
 *[ItemDef]: UArcItemDefinition
 *[ItemStack]: UArcItemStack
+*[slotref]: FArcItemSlotReference

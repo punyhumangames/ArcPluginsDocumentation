@@ -11,7 +11,7 @@ Changes and additions will be posted in `#plugins-announce` channel in discord!
 
 - Concepts
     * [x] High Level
-    * [ ] Inventory
+    * [x] Inventory
     * [ ] Item Stack
     * [ ] Item Generators
     * [ ] UI
