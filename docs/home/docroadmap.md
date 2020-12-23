@@ -4,7 +4,7 @@ Changes and additions will be posted in `#plugins-announce` channel in discord!
 
 ## General
 * [ ] Puny Human Branding
-* [ ] Link to Github page
+* [x] Link to Github page
 * [ ] Link to Issue Tracker
 
 ## Arc Inventory
@@ -12,8 +12,8 @@ Changes and additions will be posted in `#plugins-announce` channel in discord!
 - Concepts
     * [x] High Level
     * [x] Inventory
-    * [ ] Item Stack
-    * [ ] Item Generators
+    * [x] Item Stack
+    * [x] Item Generators
     * [ ] UI
 - Tutorials
     * [x] Basic Integration
