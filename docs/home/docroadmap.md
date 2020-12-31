@@ -25,13 +25,13 @@ Changes and additions will be posted in `#plugins-announce` channel in discord!
 ## Arc Teams
 
 - Concepts
-    - [ ] High Level
-    - [ ] Team
-    - [ ] Team Components
-    - [ ] Team Definitions
-    - [ ] Team States
+    - [x] High Level
+    - [x] Team
+    - [x] Team Components
+    - [x] Team Definitions (Merged into Team)
+    - [x] Team States (Merged into Team)
 - Tutorials
-    - [ ] Basic Integration
+    - [x] Basic Integration
     - [ ] Squads
 - Integrations
 
