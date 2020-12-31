@@ -12,7 +12,7 @@ Arc Teams was built from the ground up to support networked multiplayer games. I
 
 Arc Teams also supports a concept of “Sub Teams”, which are teams within teams. This can be used to further segment players into Squads, Fireteams, Guilds, Factions, or whatever you need for your game. Arc Teams has a small development footprint and integrates simply into any code base. Simply override a few functions in GameMode and add a component to PlayerState, then it works! 
 
-
+Get it on the Unreal Marketplace: [Marketplace Page](https://www.unrealengine.com/marketplace/en-US/product/arc-teams)
 
 
 ## Technical Details
