@@ -34,6 +34,12 @@ nav:
         - 'arcinventory/changelogs/1.2.0.md'
     - "Arc Teams":
         - Home: "arcteams/index.md"
+        - "Initial Setup": "arcteams/initialsetup.md"
+        - "Debug Aids": "arcteams/debugaids.md"
+        - Concepts:
+          - "High Level": "arcteams/concepts/highlevel.md"
+          - "Teams": "arcteams/concepts/team.md"
+          - "Team Components": "arcteams/concepts/teamcomponents.md"
 theme:
   name: 'material'
   palette:
