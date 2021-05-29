@@ -41,7 +41,7 @@ Once the plugin is installed and enabled, the next step is to add the Gamemode C
 
     `MyGameMode.cpp`
     ```cpp
-    AMyGameMode::AArcTeamGameModeBase()
+    AMyGameMode::AMyGameMode()
 	: Super()
     {
         TeamComponent = CreateDefaultSubobject<UArcTeamComponent_Gamemode>(TEXT("Team Component"));
