@@ -28,6 +28,7 @@ nav:
         - "MoveIt": "arcinventory/integrations/moveit.md"
       - "Useful Resources": "arcinventory/usefulresources.md"
       - Changelogs:
+        - "arcinventory/changelogs/1.3.1.144.md"
         - "arcinventory/changelogs/1.3.0.138.md"
         - "arcinventory/changelogs/1.2.9.134.md"
         - "arcinventory/changelogs/1.2.8.132.md"
