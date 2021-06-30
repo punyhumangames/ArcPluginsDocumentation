@@ -27,7 +27,7 @@ Swapping Items is done by setting, on the client, the `SwapToSlot` and `SwapFrom
 
 Included in the plugin is an ability that will drop an item from an item slot.  This Ability handles all dropping of items by replicating the slot to the server, removing the item from the inventory in that slot, and then spawning a "World Item" with that stack as part of it (See [Item Stack Concepts](../../concepts/itemstack/#world-stacks) for more information).
 
-The Removal of the item stack is predicted, but spawning the world object is not.  In high latency environments, there will be a small delay between removing the item from your inventory and seeing the world stack object spawn.  You can edit the ability to remove this prediction.  
+The removal of items from your inventory is not predicted.  In high latency environments, you will have a delay between the user attempting to drop the item, and the item being removed from the inventory and spawning in the world.   
 
 !!! note
     The Default Item Slot Widget will attempt to drop an item into the world if the drag and drop operation ends without an underlying Item Slot Widget.  This is done by activating any ability on the owning character with the `Item Slot Drop Ability Tags`.  As with Swapping, ensure that your character has this ability, that tag is set in the project settings, and the ability has it in it's Ability Tags.
