@@ -51,6 +51,14 @@ nav:
           - "High Level": "arcteams/concepts/highlevel.md"
           - "Teams": "arcteams/concepts/team.md"
           - "Team Components": "arcteams/concepts/teamcomponents.md"
+    - "Arc Communication":
+      - Home: "arccommunication/index.md"
+      - Concepts:
+        - "Routers": "arccommunication/concepts/routers.md"
+        - "Localized Messages": "arccommunication/concepts/localizedmessages.md"
+        - "Sending Messages": "arccommunication/concepts/sendingmessages.md"
+        - "Voice": "arccommunication/concepts/voip.md"
+        - "User Interface": "arccommunication/concepts/ui.md"
 theme:
   name: 'material'
   palette:
