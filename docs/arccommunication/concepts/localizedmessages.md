@@ -7,6 +7,20 @@ Localized Messages are a UObject that is created on the client per-message.  Whe
 
 Localized Messages are intended to be subclassed in BP or C++ for a given message type.  Included in the Localized Message class is a UMG Widget subclass for rendering the Message (See User Interface for more information).  While Localized Messages can be rendered without a custom widget, creating a widget is what allows for styling and making Localized Messages look different from each other.
 
+In a localized message, if the message was sent by a player, `RelatedPlayerState_1` will always be the sender.  Not all messages are sent by a player though, and not all player states in `RelatedPlayerState_1` are the sender.  For example, in a chat message, `RelatedPlayerState_1` will be the sender, but in a hypothetical Kill Feed message, `RelatedPlayerState_1` may be the person who died (with `RelatedPlayerState_2` being the killer, or null if the player died to the environment).  
+
+### Sending Localized Messages
+
+Localized Messages can be sent to clients in many ways, from the client or the server.  
+
+The primary method is a player sending a Chat message to a Route, by way of the ArcCommComponent_Player.  This can be done with the `Chat [Channel] [Message]` console command, or called directly in C++ or Blueprint.  This will send a string to the server to act as a chat message, and will be sent back as a TextMessage object.
+
+The secondary method, if you wish to broadcast other types of messages, is to call `SendLocalizeddMessage` directly, with a Message, Route, and the message data.  This is a far more powerful method of sending message and crafting them to send, but may require some custom validation on the server.  This can be called in BP or C++
+
+From the server, you can broadcast messages from the ArcCommComponent_Gamemode.  If you simply wish to send an arbirtrary string, you can use `BroadcastTextMessage` to send a message from any sender.  Giving that function a PlayerState will imply that that player sent that text message.  
+
+If you want to send a custom message, you can use `BroadcastMessage`.  This can be called from BP or C++.  It requires formatting the message yourself, but gives full power when sending any message to clients, such as a kill feed, a Join/Leave message, or any other messages you wish to send.
+
 ### Built in Localized Messages
 
 Most messages will need to be defined for your implementation, but Arc Communication provides a few pre-made message types.  

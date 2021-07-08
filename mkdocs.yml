@@ -56,7 +56,6 @@ nav:
       - Concepts:
         - "Routers": "arccommunication/concepts/routers.md"
         - "Localized Messages": "arccommunication/concepts/localizedmessages.md"
-        - "Sending Messages": "arccommunication/concepts/sendingmessages.md"
         - "Voice": "arccommunication/concepts/voip.md"
         - "User Interface": "arccommunication/concepts/ui.md"
 theme:
