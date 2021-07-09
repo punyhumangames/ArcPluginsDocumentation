@@ -41,13 +41,9 @@ The Requires Valid Sender router checks if the sender has a valid player state. 
 
 ### ArcCommRouter_RequiresNoSender
 
-!!! caution "Not Implemented Yet"
-
 The Requires No Sender router checks if the sender does not have a valid player state.  This is to ensure that players cannot send messages to this route, even if they want to.  Only gameplay code can send to this route, using an actor that is not a player.  See Sending Messages for more information.
 
 ### ArcCommRouter_Proximity
-
-!!! caution "Not Implemented Yet"
 
 The Proximity router determines the distance between the sender and reciever, and if they are within a certain distance will send the message to that reciever.  The Proxmity Router determines the locations between any sender actor and the reciever.  
 
