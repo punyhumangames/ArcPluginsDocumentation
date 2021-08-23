@@ -19,6 +19,8 @@ From the server, you can broadcast messages from the ArcCommComponent_Gamemode. 
 
 If you want to send a custom message, you can use `BroadcastMessage`.  This can be called from BP or C++.  It requires formatting the message yourself, but gives full power when sending any message to clients, such as a kill feed, a Join/Leave message, or any other messages you wish to send.
 
+
+
 ### Built in Localized Messages
 
 Most messages will need to be defined for your implementation, but Arc Communication provides a few pre-made message types.  
