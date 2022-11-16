@@ -13,6 +13,8 @@
 */
 
 [data-md-color-scheme="punyhuman"] {
+    --md-admonition-fg-color:           #C8C8C8;
+    --md-typeset-color:                 #FFFFFF;
     --md-primary-fg-color:             #4fb0c3; 
     --md-default-fg-color:              #FFFFFF; 
     --md-default-fg-color--light:        hsla(0, 0%, 100%, 0.64);
