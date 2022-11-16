@@ -1,6 +1,6 @@
 Inventory is the primary container for items, and the primary controller for what items do to players.  
 
-Inventory is implemented as an Actor Component, and should be added to your actors with the `UArcInventoryComponent_Modular`.  The base class, `UArcInventoryComponent` features the core slot structure, placing items into slots, and allowing developers to understand the layout of their inventory through queries.  The Modular Inventory provides the framework for gameplay integration for your inventory.
+Inventory is implemented as an Actor Component, and has many children classess to cover different gameplay functions.  The base class, `UArcInventoryComponent` features the core slot structure, placing items into slots, and allowing developers to understand the layout of their inventory through queries.  
 
 ## Base Inventory
 
@@ -8,10 +8,10 @@ The Primary mechanism for the base inventory is to manage and replicate Slots.  
 
 The underlying data layout is hidden from implementors, and the public API handles all edge cases around Replication, Ownership, and reports back failure states.
 
-The Modular Inventory also provides a bindable "Inventory Event" event that observers can bind to.  Whenever the Inventory has a change in data or a Processor has an event that can be responded to, this event is raised with a Gameplay Tag and payload, allowing for gameplay code to respond to changes in the inventory.
-
 !!! warning
     If a function returns a bool, that means that it can fail.  It is up to you to determine how to handle that failure.  Not catching failure states can lead to Items being lost!
+
+
 
 
 ### Slots
@@ -47,44 +47,35 @@ Slot Filters allow designers to indicate what items can be placed into the slot.
 :   Places an item into a slot.  Will fail if the slot already has an item. Always check the return value of this function, and handle failure accordingly.  It is common to call LootItem if PlaceItemIntoSlot fails. 
 
 * `LootItem`
-:   Places an item into the first slot it can.  The order it checks slots is not guaranteed, so it could end up in slots you don't expect.  If it fails, that means that item cannot possibly fit into the inventory, and failure should be handled.
+:   Places an item into the first slot it can.  The order it checks slots is not garuanteed, so it could end up in slots you don't expect.  If it fails, that means that item cannot possibly fit into the inventory, and failure should be handled.
 
 !!! caution
-    If placing an item into a slot succeeds, it is recommend to discard the pointer to the item you currently have.  Internally, the Inventory will remap the owner of the items, sometimes duplicating the object (this is to deal with problems with Unreal Replication).  
+    If placing an item into a slot succeeds, it is recommend to discard the pointer to the item you currently have.  Internally, the Inventory will remap the owner of the items, sometimes Duplicating the object (this is to deal with problems with Unreal Replication).  
 
-## Inventory Processors
 
-The Modular Inventory provides a number of Inventory Processors to add functionality to your inventory.  Processors are all derived from `UArcInventoryProcessor` and have a number of overridable functions and events to watch for changes to the inventory, and respond to them.
+## Bag 
 
-You can have any number of Processors on an inventory.  You can have multiple copies of the same processor.
-
-Arc Inventory has 3 built in processors, although you are encouraged to make your own for your own gameplay needs.  
-
-### Bag Processor
-
-The Bag Processor creates a number of "Bag Slots", which are slots with a shared item filter.  The number of bag slots can be 0.  The Bag Processor can also set the tags of all the slots it creates.
-
-There is a second Bag Processor class that uses a Gameplay Attribute to change the number of bag slots to the value of that attribute when it changes.    
+Bag is the first subclass of the base inventory.  Bag inventory creates a number of "Bag Slots", which are slots without item filters.  The number of bag slots can be 0.  You can also bind the number of slots to a Gameplay Attribute to change the number of bag slots at runtime.  
 
 !!! tip
     If you bind the bag slot gameplay attribute, you can change that attribute with an item!  
 
-!!! tip
-    You can have multiple bag processors with different tags applied to the slots!
+## Equipment
 
-### Equipment Processor
-
-The Equipment Processor contains a query for item slots that it uses to respond to item insert and removal events on the inventory.  If an item is placed into a slot that it is watching for, and that item contains an Ability Info fragment that matches a tag set in the Equipment Processor, then the Equipment Processor places the Gameplay Abilities, Attribute Sets, and Gameplay Effects listed onto the owning actor.  If the item is removed, it removes those GAS elements.  
+Equipment slots are slots with the Equipment tag as defined project settings.  When an item is placed into this slot, a callback will fire indicating that the item is equipped.  If your item has an item definition derived from `UArcItemDefinition_Equipment`, then it will activate the equipped item information and placed the GAS primitives on the player.
 
 !!! tip
-    Use the Equipment Processor  to hold things like armor in an RPG game, skills in a Overwatch-style hero shooter or MOBA, or stat-stick weapons in a Diablo or Path of Exile style Action RPG!
+    Use Equipment slots to hold things like armor in an RPG game, skills in a Overwatch-style hero shooter or MOBA, or stat-stick weapons in a Diablo or Path of Exile style Action RPG!
 
-### Active Processor
+## Active
 
-The Active Processor contains a query for item slots that it uses to create a list of slots where it can make one item "Active" at a time.  When an item is made "Active", the Active Processor looks up the Ability Info fragment that matches the tag set in the Active Processor, and then applies the Gameplay Abilities, Attribute Sets, and Gameplay Effects to the owner actor.  If the Active Item changes, then it removes the previously active item's GAS elements.  The Active Processor also sends an Active Item Changed event to the inventory, allowing the owner to respond to that event.  
+Active Inventories are inventories with a set of slots defined with the Active Slot tag.  In an active inventory, only one slot can be active at a time, and when that slot is active a callback is issued.  If an item is in the slot with a definition that derives from `UArcItemDefinition_Active`,  then the GAS Primitives in the Active Item Info property will be applied to the character.
 
 !!! tip
     Use Active Inventories for FPS or RPG games where your character can only hold one item at a time!
 
+
+!!! info
+    If these subclasses do not support your game type, it is easy to extend an inventory component and add your own functionality.  Most games create their own Inventory Component with their own functionality when items are placed into certain slots!
 
 --8<-- "includes/abbreviations.md"

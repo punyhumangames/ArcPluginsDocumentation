@@ -18,42 +18,49 @@ Arc Inventory has a few goals, and they are reflected in every part of the inven
 
 ## Inventories
 
-Inventories are the primary container for Items.  Inventory is an actor component that handles the placement of items into Slots.  The Inventory has many subclasses to enable different types of functionality, and care should be taken to decide which class is right for your game.
+Inventories are the primary container for Items.  Inventory is an actor component that handles the placement of items into Slots.  
+
+!!! note
+    Inventories components are split into two classes: `UArcInventoryComponent` and `UArcInventoryComponent_Modular` (which inherits from `UArcInventoryComponent`).  The Base Inventory Component handles the management of Inventory Slots and basic inventory operations (such as adding and removing items), while the Modular Inventory Component provides the framework for gameplay integration with inventory data.  It is intended that you use `UArcInventoryComponent_Modular` for all your gameplay classes.    
 
 At it's core, Inventories are an array of `Inventory Slots`.  Slots are defined with a set of Gameplay Tags, and can have an Item Filter to indicate which items can be placed into the slot.  
 
-Inventory Slots are split into 3 different concepts, `Bag`, `Equipment`, and `Active`.  
+The Modular Inventory Component is the primary class for the system.  It contains a number of `Inventory Processors` that provide functionality for the inventory when items are placed into a slot, when items in a slot update, or various other events.
 
-`Bag Slot`
-:   Bag Slots are slots that can generally hold any item, but do not do anything when an item is placed into them.  
+Arc Inventory ships with 3 default processors: `Bag`, `Equipment`, and `Active`. 
 
-`Equipment Slot`
-:   Equipment Slots are slots that generally hold specific items, and place GAS primitives onto the component owner when the item is put into the slot.  
 
-`Active Slot`
-:   Active slots are slots that hold specific items, and only one item can be active at a time of all items in active slots.  These can be thought of as held items for a first person shooter or a sword that the player is currently wielding.
+`Bag Processor`
+:   The Bag Processor creates a number of slots in the inventory with a shared tag, and sets filters for that tag.  This can be used to create many slots to store items in. 
 
-!!! tip
-    A slot can be any combination of `Bag`, `Equipment`, or `Active`.  It's very common for Active Slots to also be Equipment Slots!
+`Equipment Processor`
+:   Equipment Processors listen to for an event when items are placed into specifically tagged slots.  Once an item is placed into that slot, the Processor looks up it's AbilityInfo fragment matching the Equipment Tag and applies the Abilities, Attribute Sets, and Gameplay Effects to the owning actor.  
 
-!!! caution
-    `Equipment` and `Active` slots only have meaning when using their corrisponding subclass of UArcInventoryComponent.  See the Inventory page for more details!
+`Active Processor`
+:   The Active Processor collects a list of slots that match the Active Processor's slot query.  It then manages which item slot of that list is "Active", as only one item int hat list can be active at a time.  When an item is made active, the Processor sends a "Item Active" event to the owner, and then looks up the AbilityInfo fragment matching the Active Slot on the item in that slot and applies the Abilities, Attribute Sets, and Gameplay Effects to the owning actor.  This can be thought of as the item currently held by the character in a first person shooter.
 
+Item Slots can hold any number of tags, allowing for multiple processors to match the same slot if behaviors are desired there.  
+
+!!! note
+    Wile ArcInventory provides a number of built in processors, you may need to create your own for your own gameplay needs.  Simply subclass `UArcItemProcessor` in C++ or Blueprint and override any of it's functions to get started.  
 
 ## Items
 
-Items are split into two different concepts, the `Item Stack` and the `Item Defininition`.  
+Every item instance is represented by a `Item Stack` UObject.  In a multiplayer scenario, the ItemStack handles replication as a replicated subobject of the actor that owns the inventory that the item is in.  Items not owned by an actor are garbage, and will be garbage collected.
 
-`Item Stack`
-: A Replicated UObject that contains instance-specific data for a given item.  It's very light and thin to support many items being replicated
+!!! note
+    Items are split into the classes `UArcItemStackBase` and `UArcItemStackModular`, which inherits from UArcItemStackBase. `UArcItemStackBase` contains all of the replication and management code, where UArcItemStackModular contains the properties, fragments, and other higher level functionality bits.  It is recommended that you use `UArcItemStackModular` in all game code and blueprint.
 
-`Item Definition`
-: A default-object only blueprint class that contains all of the static data for each item.
+Items contain a list of Fragments, which provide per-item properties to the item.  Fragments can be replicated.  
 
-These concepts are split to allow Item Stack to be as light as possible with replication.  
+Items may hold a `Item Definition`, which is a list of fragments shared between all items that share the same definition.  Fragments within an Item Definition cannot be modified and are not individually replicated.
 
-!!! info
-    It is intended that you subclass both `UArcItemStack` and `UArcItemDefinition` for your custom implementations
+Fragments placed onto an Item Stack directly are known as `Dynamic Fragments`.  They may override fragments placed on the Item Definition.
+
+Items may have `Sub Items`, which are items attached to other items.  SubItems are not a special class.  Any Item can be attached to any other item.  Fragments on sub items may override fragments on parent items, making them useful as attachments, perks, or other gameplay design elements.
+
+!!! note
+    While Arc Inventory provides a number of built in item fragments, it is intended that you create your own for your own gameplay needs, and makes creating new fragments as easy as possible.  
 
 ## Item Generators
 

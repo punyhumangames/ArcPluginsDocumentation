@@ -14,6 +14,7 @@ nav:
     - "Arc Inventory":
       - Home: "arcinventory/index.md"
       - "Initial Setup": "arcinventory/initialsetup.md"
+      - "Migration Guide": "arcinventory/updateto2.md"
       - "Concepts":
           - "High Level": "arcinventory/concepts/highlevel.md"
           - "Inventory": "arcinventory/concepts/inventory.md"
@@ -48,6 +49,20 @@ nav:
           - 'arcinventory/changelogs/1.2.1.106.md'
           - 'arcinventory/changelogs/1.2.0.md'
       - "FAQ/Common Issues": "arcinventory/faq.md"
+      - "1.0 Documentation":
+        - "Initial Setup": "arcinventory/1.0/initialsetup.md"
+        - "Concepts":
+          - "High Level": "arcinventory/1.0/concepts/highlevel.md"
+          - "Inventory": "arcinventory/1.0/concepts/inventory.md"
+          - "Item Stacks": "arcinventory/1.0/concepts/itemstack.md"
+          - "Item Generators": "arcinventory/1.0/concepts/generators.md"
+          - "User Interface": "arcinventory/1.0/concepts/ui.md" 
+        - Tutorials:
+          - "Simple FPS": "arcinventory/1.0/tutorials/simplefps.md"
+          - "Maniuplating Items": "arcinventory/1.0/tutorials/containers.md"
+          - "Randomized Item Generation": "arcinventory/1.0/tutorials/randomitems.md"
+        - Integrations:
+          - "MoveIt": "arcinventory/integrations/moveit.md"
     - "Arc Teams":
         - Home: "arcteams/index.md"
         - "Initial Setup": "arcteams/initialsetup.md"
@@ -72,6 +87,7 @@ theme:
     scheme: punyhuman
   features:
     - navigation.tabs
+    - content.tabs.link
 markdown_extensions:
   - abbr
   - admonition
@@ -79,6 +95,10 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.snippets
   - def_list
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite

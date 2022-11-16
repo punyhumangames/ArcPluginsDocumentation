@@ -13,6 +13,7 @@
 */
 
 [data-md-color-scheme="punyhuman"] {
+    
     --md-admonition-fg-color:           #C8C8C8;
     --md-typeset-color:                 #FFFFFF;
     --md-primary-fg-color:             #4fb0c3; 
@@ -29,13 +30,14 @@
     --md-code-bg-color:                 #2b2b2b;
     --md-code-hl-comment-color:          #7FB785;
 
-    --md-code-hl-color:                hsla(#{hex2hsl($clr-blue-a200)}, 0.15);
+    --md-code-hl-color:                 #a5a5a5;
     --md-code-hl-number-color:         hsla(6, 74%, 63%, 1);
     --md-code-hl-special-color:        hsla(340, 83%, 66%, 1);
     --md-code-hl-function-color:       hsla(291, 57%, 65%, 1);
     --md-code-hl-constant-color:       hsla(250, 62%, 70%, 1);
     --md-code-hl-keyword-color:        hsla(219, 66%, 64%, 1);
     --md-code-hl-string-color:         hsla(150, 58%, 44%, 1);
+    --md-code-hl-generic-color:         #a5a5a5;
 
     --md-footer-bg-color:               #f4c737;
     --md-footer-bg-color--dark:         #f4c737;
