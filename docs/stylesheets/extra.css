@@ -14,7 +14,7 @@
 
 [data-md-color-scheme="punyhuman"] {
     --md-primary-fg-color:             #4fb0c3; 
-    --md-default-fg-color:              #FFFFFF;
+    --md-default-fg-color:              #FFFFFF; 
     --md-default-fg-color--light:        hsla(0, 0%, 100%, 0.64);
     --md-default-fg-color--lighter:     hsla(0, 0%, 100%, 0.53);
     --md-default-fg-color--lightest:    hsla(0, 0%, 100%, 0.32);
