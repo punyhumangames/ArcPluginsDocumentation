@@ -26,11 +26,12 @@
     --md-typeset-a-color:               #f4c737;
     --md-accent-bg-color:               #4fb0c3;
     --md-admonition-bg-color:            #2b2b2b;
-    --md-code-fg-color:                  #a5a5a5;
+
+    --md-code-fg-color:                  #cccccc;
     --md-code-bg-color:                 #2b2b2b;
     --md-code-hl-comment-color:          #7FB785;
-
-    --md-code-hl-color:                 #a5a5a5;
+    --md-code-hl-color:                 var(--md-code-fg-color);
+    --md-code-hl-name-color:            var(--md-code-hl-color);
     --md-code-hl-number-color:         hsla(6, 74%, 63%, 1);
     --md-code-hl-special-color:        hsla(340, 83%, 66%, 1);
     --md-code-hl-function-color:       hsla(291, 57%, 65%, 1);
@@ -38,6 +39,7 @@
     --md-code-hl-keyword-color:        hsla(219, 66%, 64%, 1);
     --md-code-hl-string-color:         hsla(150, 58%, 44%, 1);
     --md-code-hl-generic-color:         #a5a5a5;
+    --md-code-hl-punctuation-color:     hsla(219, 66%, 64%, 1);
 
     --md-footer-bg-color:               #f4c737;
     --md-footer-bg-color--dark:         #f4c737;

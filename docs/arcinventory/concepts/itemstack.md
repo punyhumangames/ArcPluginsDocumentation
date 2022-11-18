@@ -1,45 +1,62 @@
-The second concept is the Item Stack, or Item Instance.  Item Instancing can get very heavy with a lot of data, and Arc Inventory takes care to make each item as light as possible, while still being extendable.  To achieve this, Arc Inventory creates two concepts for storing item data, the Stack and the Definition.  The Item Stack is the per-instance data, and only data that is necissary is included in it.  The Item Definition is the static data that doesn't change across instances, like the abilities an item grants or it's mesh.  
+The second concept is the Item Stack, or Item Instance.  Item Instancing can get very heavy with a lot of data, and Arc Inventory takes care to make each item as light as possible, while still being extendable.  To achieve this, Arc Inventory splits item data into `Item Fragments`, which can be applied to an Item Stack or an `Item Definition`.  The Item Stack can query for any Fragment, searching for that fragment in either the Item Stack, Item Definition, or an item's Sub Items (details below).  
 
-The difference between an Item Stack and an Item Defition is important and a key concept to understand with Arc Inventory
+The Item Definition is a Data Asset that holds a list of Fragments that do not change.  This reduces replication load massively.  While the Item Definition is optional, effective use of Item Definitions allow for efficient networking and memory usage.  
 
-!!! tip
-    It is possible and intended to extend both Item Stack and Item Definition.  Extending Item Definition to add your own static data is extremely common.  Extending ItemStack is less common, but if you need to replicate per-instance data, it can be easily done.
 
 ## Item Stacks
 
-Item Stacks are derived directly from UObject, and are replicated inline with the inventory (or other replicated actor who owns the stack).  Item Stacks are extremely thin, and only replicate and contain necissary information for the instance of the object.  The contain the full representation of an item, including the item definition
+Item Stacks are derived directly from UObject, and are replicated inline with the inventory (or other replicated actor who owns the stack).  Item Stacks are as thin as possible, containing the Item Definition, any Dynamic Item Fragments, and the list of Stat Tags.  
 
 !!! warning
-    Internally, Item Stacks are duplicated or moved around, so a pointer to an item stack may expire when transfering items across inventories.  This is to help better support replication, but does mean that it's required to discard pointers to items when transfering item stacks or merging them.
+    Internally, Item Stacks are duplicated or moved around, so a pointer to an item stack may expire when transferring items across inventories.  This is to help better support replication, but does mean that it's required to discard pointers to items when transferring item stacks or merging them.
 
-Item Stacks can have a stack size, meaning multiple items of the same definition can be combined into one single object.  They can be merged and split, creating new item stack objects in the process.  The Item Definition must allow items to do this, and two item stacks with different sub-items cannot be merged.
+Item Stacks have what is known as a Stat Tag array.  This is a list of Tag => Integer mappings that can be used to measure stack size or any other integer property on an item.  
 
-Item Stacks also hold instanced attribute sets for the instanced attribute system.  When the inventory needs to store off attributes or active gameplay effects, it does so by storing them in the Item Stack.
+### Fragments
+
+Item Fragments are the instanced properties for each item.  They are composable, overridable, and optionally replicated.  To acquire a Fragment, the Item Stack provides query functions named `FindFirstFragment` and `FindAllFragments`.  
+
+Fragments originating from an Item Definition are known as "Static Fragments", and do not replicate (the item definition pointer itself is replicated).  Fragments originating from the Item Stack's fragment array are known as "Dynamic Fragments", and can be replicated.  Fragments originating from a Sub Item are known as "Sub Item Fragments", and may or may not replicate depending on if the sub item fragment is static or dynamic. 
+
+`FindFirstFragment` returns the first fragment found that matches the query from either the Sub Item Stacks, The Dynamic Fragments, or the Item Definition (in that order).  This behavior can be used to create overrides for certain Fragments, using Sub Items or Dynamic Fragments to override base properties.
+
+`FindAllFragments` returns every fragment that matches the query.  This includes Dynamic Fragments and Sub Item Fragments.  It is up to the user to determine where the fragments came from.
+
+!!! tip
+    Item Fragments can be created in either C++ or Blueprint.  
+
+!!! tip
+    If a Fragment is intended to be often as a Dynamic Fragment, it's best to pack as many properties into a single fragment as possible.  If a Fragment is most intended to be placed on an Item Definition, it's best to split it up as much as possible.  
+
+!!! note
+    In Arc Inventory 1.0, it was often necessary to access the Item Definition to access properties on an item.  This is no longer needed in 2.0, as the Fragment Queries handle accessing properties.  It is not recommended to access the item definition from an item stack pointer.  
 
 ### Sub Item Stacks
 
-Item Stacks can contain a list of Item Stacks as "Sub Items".  These are fully functional items with definitions that are attached to the parent item.  Sub Items can be nested indefinitely.  This can be used to create a component system. 
+Item Stacks can contain a list of Item Stacks as "Sub Items".  These are fully functional items with fragments that are attached to the parent item.  Sub Items can be nested indefinitely.  This can be used to create a component system. 
 
 Sub Items are replicated inline, and every item can have different sub items.  They are ideal for replicating option information with certain item instances.  
+
+Fragments on a Sub Item Stack are returned first when querying the parent item's Fragments.  This allows Sub Items to override parent item fragments.
 
 !!! tip
     Use Sub Item Stacks to implement perks, attachments, or even firing modes on your items!
 
 ## Item Definitions
 
-Item Definitions are the static data for items.  They are used as class definitions and CDOs only, never instanced.  In this regard, they can be very lightly replicated, and are key to high performance in the system.
+Item Definitions are the static data for items.  They are Data Assets, and are instanced once per game instance and replicated simply as a pointer.  
 
-Item Definitions carry all of the data required to make the item work.  They are often subclassed to add more data depending on the usage of that item, and easily support all kinds of data.  Different subclasses of the Inventory Component do work with the data in an Item Definition to achieve functionality.
+Dynamic Fragments on an Item Stack are returned before Fragments on an Item Definition when querying for fragments.  This can be used to override a Definition's fragment with a dynamic fragment.  
 
-!!! note
-    It is the Inventory that applies GA primitives to the character.  The Item Definition simply contains that data.  
+!!! tip
+    Create default values for item names and descriptions in Item Definitions, and override it with a Dynamic Fragment on an item stack!
 
-
-
+!!! tip
+    Item Definitions are entirely optional on an item.  While there is quite a bit of network overhead with a fully dynamic item, it's entirely possible.  It works great in single player scenarios!
 
 ## World Stacks
 
-Given that Item Stacks and Item Definitions are not actors, Items cannot be placed in the game world.  Since this is a common need for inventory systems, Arc Inventory contains a class, `AArcItemStackWorldObject`, which implements basic replication and visuals for an item. 
+Given that Item Stacks are not actors, Items cannot be placed in the game world.  Since this is a common need for inventory systems, Arc Inventory contains a class, `AArcItemStackWorldObject`, which implements basic replication and visuals for an item. 
 
 It is recommended that you set up a subclass of this actor, and override the setting in the Project Settings to use it.  You can use `UArcItemBPFunctionLibrary::SpawnWorldItem` or the `Spawn World Item` function in blueprint to spawn World Items easily.  
 

@@ -1,18 +1,9 @@
-User Interface is a common requirement for Inventory systems, but often requires unique and game specific implementations to achive the best look.  To this end, Arc Inventory provides a few building blocks for development inventories, but expects that user implement their own stylized views.  
+User Interface is a common requirement for Inventory systems, but often requires unique and game specific implementations to achieve the best look.  To this end, Arc Inventory provides a few building blocks for development inventories, but expects that user implement their own stylized views.  
 
 Arc Inventory follows the MVC pattern for UX, with Inventory/Items acting as the Model, UMG Widgets acting as the View, and Game Framework code like Pawns, the Inventory Component, and Player Controllers acting as the Controller.
 
 !!! tip
     While you are welcome to modify all of the UMG widgets inside of the Plugin, it is recommended that you copy them out into your own project.  Plugin Updates may overwrite any changes you make.
-
-## UI Data
-
-Item Specific UI Data is stored in a blueprintable `UIData` instanced object inside of the Item Definition or Item Generator.  Both ItemDef and ItemGen have this object, as it allows you display item generators to the user if your game design requires it.
-
-UI Data objects can be easily extended in blueprint to add new properties.  It is common to create multiple types of UIData structures for different items.  UMG widgets can access this object and cast to whichever child class is needed to display it.
-
-!!! warning
-    UI Data is not replicated!  If there are specific properties you wish to replicate to display on the UI, it must be replicated in the Item Stack.
 
 ## Item Slot Widget
 
@@ -23,9 +14,12 @@ Item Slot Widgets are the primary method for showing the contents of an item slo
 
 ### Item Cards
 
-Items are displayed using an 'Item Card' widget, or a specific UMG subclass that contains a reference to an item and displays the information within that card.  By default, there are two types of Item Cards, Small and Large.  Small Item Cards are generally a 32x32 image displaying the item on top of the item slot widget or while dragging and dropping.  Large Item Cards are used to display the item when you mouse over the Item Card, and often contain all of the data.  The Item Cards look into the Item's UI Data for textures and names to use. 
+Items are displayed using an 'Item Card' widget, or a specific UMG subclass that contains a reference to an item and displays the information within that card.  By default, there are two types of Item Cards, Small and Large.  Small Item Cards are generally a 32x32 image displaying the item on top of the item slot widget or while dragging and dropping.  Large Item Cards are used to display the item when you mouse over the Item Card, and often contain all of the data.  The Item Cards look into the Item Fragments for what information to display.
 
 It is up to the implementer to create their own displays, but some examples are provided in the plugin.  
+
+!!! tip
+    Arc Inventory ships with a `ItemFragment_ItemCard` that allows an item to define what item card classes to use.  
 
 ### Drag and Drop
 
