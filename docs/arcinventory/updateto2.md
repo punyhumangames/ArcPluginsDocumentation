@@ -63,7 +63,7 @@ Otherwise, the Item Generator system hasn't changed much.
 Arc Inventory 2.0 comes with a helpful script that converts 1.0 items to 2.0 items.  Simply right click on an Arc Inventory 1.0 item definition, select "Scripted Actions" and choose "Convert Old Item Definition to Modular".  This will create a `Convert/` folder in the directory of that item and port all the data in that old item definition into a new item definition.
 
 !!! note
-    The Conversion script is located in the Arc Inventory Sample Project (LINK PENDING).  Copy the script to your own project, and make modifications to support your own data.  
+    The Conversion script is located in the [Arc Inventory Sample Project](https://drive.google.com/file/d/1p3AgfIiSpDTTwt0kQ_2z4odG4h_QSYuN/view?usp=share_link).  Copy the script to your own project, and make modifications to support your own data.  
 
     If you change the way it ports data, simply re-run it over items that have already been converted and it will update already created modular item definitions with new fragments.  
 
