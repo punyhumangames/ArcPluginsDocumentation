@@ -27,7 +27,7 @@ nav:
         - "MoveIt": "arcinventory/integrations/moveit.md"
       - "Useful Resources": "arcinventory/usefulresources.md"
       - Changelogs:
-        - arcinventory/changelogs/2.0.0.260.md
+        - arcinventory/changelogs/2.0.0.263.md
         - "1.0":
           - "arcinventory/changelogs/1.4.2.174.md"
           - "arcinventory/changelogs/1.4.1.163.md"
@@ -60,7 +60,7 @@ nav:
           - "Maniuplating Items": "arcinventory/1.0/tutorials/containers.md"
           - "Randomized Item Generation": "arcinventory/1.0/tutorials/randomitems.md"
         - Integrations:
-          - "MoveIt": "arcinventory/integrations/moveit.md"
+          - "MoveIt": "arcinventory/1.0/integrations/moveit.md"
     - "Arc Teams":
         - Home: "arcteams/index.md"
         - "Initial Setup": "arcteams/initialsetup.md"
