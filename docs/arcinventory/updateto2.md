@@ -57,6 +57,9 @@ There is a new Item Generator, the Modular Unique generator.  This functions nea
 
 Otherwise, the Item Generator system hasn't changed much.
 
+!!! note
+    There is no 2.0 version of the Simple Random Item Generator yet.  It will be added in a future update. 
+
 
 ## Updating 1.0 Items to 2.0 Items
 
