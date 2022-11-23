@@ -23,8 +23,6 @@ nav:
           - "User Interface": "arcinventory/concepts/ui.md"
       - Tutorials:
         - "Simple FPS": "arcinventory/tutorials/simplefps.md"
-        - "Maniuplating Items": "arcinventory/tutorials/containers.md"
-        - "Randomized Item Generation": "arcinventory/tutorials/randomitems.md"
       - Integrations:
         - "MoveIt": "arcinventory/integrations/moveit.md"
       - "Useful Resources": "arcinventory/usefulresources.md"
