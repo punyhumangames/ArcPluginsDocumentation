@@ -4,7 +4,7 @@ site_author: 'Puny Human'
 docs_dir: docs/
 repo_name: 'punyhumangames/ArcPluginsDocumentation'
 repo_url: 'https://github.com/punyhumangames/ArcPluginsDocumentation'
-copyright : Copyright &copy; 2020-2021 Puny Human
+copyright : Copyright &copy; 2020-2023 Puny Human
 extra_css:
   - stylesheets/extra.css
 nav:
@@ -23,6 +23,7 @@ nav:
           - "User Interface": "arcinventory/concepts/ui.md"
       - Tutorials:
         - "Simple FPS": "arcinventory/tutorials/simplefps.md"
+        - "Manipulating Items": "arcinventory/tutorials/item_manip.md"
       - Integrations:
         - "MoveIt": "arcinventory/integrations/moveit.md"
       - "Useful Resources": "arcinventory/usefulresources.md"

@@ -46,6 +46,14 @@
     --md-footer-fg-color:                #393939;
     --md-footer-fg-color--light:        #393939;
     --md-footer-fg-color--lighter:      #616161;
+
+    
+}
+
+.embeddedbp iframe
+{
+    width: 100%;
+    height: revert-layer;
 }
 
   
