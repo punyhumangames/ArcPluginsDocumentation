@@ -42,7 +42,7 @@ class YOUR_API AYourCharacter : public ACharacter, public IArcInventoryInterface
 
 private: 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UArcInventoryComponent* InventoryComponent;
+	class UArcInventoryComponent_Modular* InventoryComponent;
 public:
 	static FName InventoryComponentName;
 
@@ -55,15 +55,13 @@ YourCharacter.cpp
     FName AYourCharacter::InventoryComponentName(TEXT("InventoryComponent"));
 
     AYourCharacter::AYourCharacter(const FObjectInitializer& ObjectInitializer)
-        : Super(ObjectInitializer.SetDefaultSubobjectClass<UArcInventoryComponent_Modular>(InventoryComponentName))
+        : Super(ObjectInitializer)
     {
         InventoryComponent = CreateDefaultSubobject<UArcInventoryComponent_Modular>(InventoryComponentName); 
 
     }
 ```
 
-!!! note
-    This setup, with the `static FName InventoryComponentName` and `SetDefaultSubobjectClass` allows you to have a bit of a hierarchy for your character classes.  For example, you can have a base class that uses a basic inventory component and a 'PlayerCharacter' subclass that has an overridden inventory component.  It is up to you if you want to go this route.
 
 Next, create a new Blueprint Class that is a child of `AYourCharacter`, named BP_YourCharacter.  Verify that you have an Inventory Component on your character.
 
