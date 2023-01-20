@@ -46,7 +46,7 @@ private:
 public:
 	static FName InventoryComponentName;
 
-    class UArcInventoryComponent_Modular* GetInventoryComponent() const override { return InventoryComponent; }
+    class UArcInventoryComponent* GetInventoryComponent() const override { return InventoryComponent; }
 };
 ```
 
