@@ -85,6 +85,9 @@ nav:
         - "Localized Messages": "arccommunication/concepts/localizedmessages.md"
         - "Voice": "arccommunication/concepts/voip.md"
         - "User Interface": "arccommunication/concepts/ui.md"
+    - "Arc Activities":
+      - Home: "arcactivities/index.md"
+      - "Event Reference": "arcactivities/events.md"
 theme:
   name: 'material'
   palette:
