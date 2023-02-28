@@ -76,6 +76,7 @@ nav:
           - "Teams": "arcteams/concepts/team.md"
           - "Team Components": "arcteams/concepts/teamcomponents.md"
         - Changelog:
+          - "arcteams/changelog/1.3.1.105.md"
           - "arcteams/changelog/1.3.0.98.md"
           - "arcteams/changelog/1.2.1.86.md"          
     - "Arc Communication":
