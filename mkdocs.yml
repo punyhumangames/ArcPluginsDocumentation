@@ -54,6 +54,7 @@ nav:
           - 'arcinventory/changelogs/1.2.1.106.md'
           - 'arcinventory/changelogs/1.2.0.md'
       - "FAQ/Common Issues": "arcinventory/faq.md"
+      - "Deprecations": "arcinventory/deprecations.md"
       - "1.0 Documentation":
         - "Initial Setup": "arcinventory/1.0/initialsetup.md"
         - "Concepts":
