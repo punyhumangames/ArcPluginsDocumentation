@@ -14,19 +14,30 @@ The following files and classes are deprecated with the release of Arc Inventory
 * `Components/ArcInventoryComponent_Bag.h/.cpp`
 * `Components/ArcInventoryComponent_Equipment .h/.cpp` 
 * `Components/ArcInventoryComponent_Active .h/.cpp`
-Replaced by the Modular Inventory Processors of the same names
+
+!!! info 
+    Replaced by the Modular Inventory Processors of the same names
 
 * `Generators/ArcItemGenerator_SimpleRandom .h/.cpp` 
-Will be replaced and added to the Sample Project
+
+!!! info
+    Will be replaced and added to the Sample Project
+
 * `Generators/ArcItemGenerator_Unique .h/.cpp` 
-Replaced by ArcItemGenerator_ModularUnique
+
+!!! info
+    Replaced by ArcItemGenerator_ModularUnique
 
 * `Item/ArcItemDefinition_New .h/.cpp`
 * `Item/Definitions/ArcItemDefinition_Equipment .h/.cpp`
 * `Item/Definitions/ArcItemDefinition_Active .h/.cpp`
 * `Item/Perks/ArcItemDefinition_Perk .h/.cpp`
 * `Item/Perks/ArcItemStack_Perk.h`
-Replaced by the Modular Item Definitions and Fragments.  
+
+!!! info
+    Replaced by the Modular Item Definitions and Fragments.  
 
 * `ArcItemStack .h/.cpp`
-Replaced by ArcItemStackModular
+
+!!! info
+    Replaced by ArcItemStackModular
