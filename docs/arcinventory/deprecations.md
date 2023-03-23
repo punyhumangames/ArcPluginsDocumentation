@@ -41,3 +41,32 @@ The following files and classes are deprecated with the release of Arc Inventory
 
 !!! info
     Replaced by ArcItemStackModular
+
+#### Arc Inventory plugin blueprints
+
+With the launch of Arc Inventory 2.0, we've begun keeping all supported versions of Arc Inventory up to date.  However, this has lead to maintenance issues with saving these assets with various engine versions.  
+
+In an effort to ease the upgrade path for these blueprints, they are being migrated to the Arc Inventory Example Project, where they can be easily migrated into your project.
+
+As such, the following blueprints are deprecated and will be removed in Arc Inventory 2.3 (timeframe: around June 2023).
+
+UI/BP_ArcInventoryUIFunctionLibrary
+UI/BP_BaseItemTooltip
+UI/BP_EmptyItemCard
+UI/BP_ItemSlotDragAndDrop
+UI/BP_ItemSlotReference
+UI/BP_ItemSlotWidget
+UI/wooden-crate
+UI/Examples/BP_InventoryBagWidget
+UI/Examples/ItemCards/BP_SimpleItemUIData
+UI/Examples/ItemCards/BP_SimpleLargeItemCard
+UI/Examples/ItemCards/BP_SimplePerkItemCard
+UI/Examples/ItemCards/BP_SimpleSmallItemCard
+
+Abilities/BP_DropItemFromSlotNew
+Abilities/BP_LootAllTheThings
+Abilities/BP_SwapItemSlots
+
+Input/ArcInvInputBinder_Raw
+
+All of these files will be located in the Arc Inventory Example project, and the most recent engine versions (starting with 5.1) will be tagged.  
