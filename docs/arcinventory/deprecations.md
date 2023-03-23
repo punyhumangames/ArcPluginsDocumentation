@@ -50,23 +50,23 @@ In an effort to ease the upgrade path for these blueprints, they are being migra
 
 As such, the following blueprints are deprecated and will be removed in Arc Inventory 2.3 (timeframe: around June 2023).
 
-UI/BP_ArcInventoryUIFunctionLibrary
-UI/BP_BaseItemTooltip
-UI/BP_EmptyItemCard
-UI/BP_ItemSlotDragAndDrop
-UI/BP_ItemSlotReference
-UI/BP_ItemSlotWidget
-UI/wooden-crate
-UI/Examples/BP_InventoryBagWidget
-UI/Examples/ItemCards/BP_SimpleItemUIData
-UI/Examples/ItemCards/BP_SimpleLargeItemCard
-UI/Examples/ItemCards/BP_SimplePerkItemCard
-UI/Examples/ItemCards/BP_SimpleSmallItemCard
+* UI/BP_ArcInventoryUIFunctionLibrary
+* UI/BP_BaseItemTooltip
+* UI/BP_EmptyItemCard
+* UI/BP_ItemSlotDragAndDrop
+* UI/BP_ItemSlotReference
+* UI/BP_ItemSlotWidget
+* UI/wooden-crate
+* UI/Examples/BP_InventoryBagWidget
+* UI/Examples/ItemCards/BP_SimpleItemUIData
+* UI/Examples/ItemCards/BP_SimpleLargeItemCard
+* UI/Examples/ItemCards/BP_SimplePerkItemCard
+* UI/Examples/ItemCards/BP_SimpleSmallItemCard
 
-Abilities/BP_DropItemFromSlotNew
-Abilities/BP_LootAllTheThings
-Abilities/BP_SwapItemSlots
+* Abilities/BP_DropItemFromSlotNew
+* Abilities/BP_LootAllTheThings
+* Abilities/BP_SwapItemSlots
 
-Input/ArcInvInputBinder_Raw
+* Input/ArcInvInputBinder_Raw
 
 All of these files will be located in the Arc Inventory Example project, and the most recent engine versions (starting with 5.1) will be tagged.  
