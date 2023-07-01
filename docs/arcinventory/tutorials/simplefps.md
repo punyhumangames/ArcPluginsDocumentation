@@ -38,15 +38,16 @@ YourCharacter.h
 UCLASS()
 class YOUR_API AYourCharacter : public ACharacter, public IArcInventoryInterface /* ASC Interfaces here too */
 {
-    //Your character class stuff...
-
-private: 
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	GENERATED_BODY()
+	//Your character class stuff...
+ 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UArcInventoryComponent_Modular* InventoryComponent;
 public:
 	static FName InventoryComponentName;
-
-    class UArcInventoryComponent* GetInventoryComponent() const override { return InventoryComponent; }
+public:
+	AYourCharacter(const FObjectInitializer& ObjectInitializer);
+	class UArcInventoryComponent* GetInventoryComponent() const override { return InventoryComponent; }
 };
 ```
 
@@ -57,8 +58,8 @@ YourCharacter.cpp
     AYourCharacter::AYourCharacter(const FObjectInitializer& ObjectInitializer)
         : Super(ObjectInitializer)
     {
-        InventoryComponent = CreateDefaultSubobject<UArcInventoryComponent_Modular>(InventoryComponentName); 
-
+	///Your Character stuff
+        InventoryComponent = CreateDefaultSubobject<UArcInventoryComponent>(InventoryComponentName); 
     }
 ```
 
