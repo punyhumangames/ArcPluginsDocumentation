@@ -20,7 +20,7 @@ There are two methods to add the plugin to your project, one for if you use the 
 === "Source Build"
     If using a source build from github or Epic's perforce, you must first download the plugin from the Unreal Engine marketplace.  You must have a launcher version installed to download it for that engine version, but you don't need to use it.
 
-    Once downloaded, you need to copy the plugin from your Engine/Engine/Plugins/Marketplace folder and place it in your game project's Projects/ folder.  
+    Once downloaded, you need to copy the plugin from your Engine/Engine/Plugins/Marketplace folder and place it in your game project's Plugins/ folder.  
 
     After that, Arc Inventory should build and be available to your game.
 
