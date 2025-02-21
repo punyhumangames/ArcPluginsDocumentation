@@ -47,7 +47,7 @@ public:
 	static FName InventoryComponentName;
 public:
 	AYourCharacter(const FObjectInitializer& ObjectInitializer);
-	class UArcInventoryComponent* GetInventoryComponent() const override { return InventoryComponent; }
+	class UArcInventoryComponent_Modular* GetInventoryComponent() const override { return InventoryComponent; }
 };
 ```
 
@@ -59,7 +59,7 @@ YourCharacter.cpp
         : Super(ObjectInitializer)
     {
 	///Your Character stuff
-        InventoryComponent = CreateDefaultSubobject<UArcInventoryComponent>(InventoryComponentName); 
+        InventoryComponent = CreateDefaultSubobject<UArcInventoryComponent_Modular>(InventoryComponentName); 
     }
 ```
 
