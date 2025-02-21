@@ -36,7 +36,7 @@ Slot Filters allow designers to indicate what items can be placed into the slot.
 
 ### Presets
 
-Inventory settings can be defined in a a data asset, `UArcInventoryComponentPreset`.  These objects allow you to define custom item slots and inventory processors in the asset, and then share that asset across multiple inventory components.  You can also add additional presets to a preset, allowing you to share a set of inventory settings across multiple presets.
+Inventory settings can be defined in a data asset, `UArcInventoryComponentPreset`.  These objects allow you to define custom item slots and inventory processors in the asset, and then share that asset across multiple inventory components.  You can also add additional presets to a preset, allowing you to share a set of inventory settings across multiple presets.
 
 
 ### Notable Functions/Properties
