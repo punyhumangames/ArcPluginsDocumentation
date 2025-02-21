@@ -26,7 +26,10 @@ Fragments originating from an Item Definition are known as "Static Fragments", a
     Item Fragments can be created in either C++ or Blueprint.  
 
 !!! tip
-    If a Fragment is intended to be often as a Dynamic Fragment, it's best to pack as many properties into a single fragment as possible.  If a Fragment is most intended to be placed on an Item Definition, it's best to split it up as much as possible.  
+    A large amount of item fragments can cause undesirable performance with the garbage collector.  It's best to make larger fragments with lots of properties that all share the same concept.  For example, all the properties needed to show the item in your UI should be placed onto one Fragment
+    
+!!! tip
+    Dynamic Fragments are intensive on networking, so for multiplayer games, it's best to limit the number of dynamic fragments used.
 
 !!! note
     In Arc Inventory 1.0, it was often necessary to access the Item Definition to access properties on an item.  This is no longer needed in 2.0, as the Fragment Queries handle accessing properties.  It is not recommended to access the item definition from an item stack pointer.  
