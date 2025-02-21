@@ -16,7 +16,7 @@ The Modular Inventory also provides a bindable "Inventory Event" event that obse
 
 ### Slots
 
-Slots are the primary container for items.  The underlying replication type, `FArcItemSlot` is not exposed to the public API, but it covers the details of replication and ensuring that slots are synchronized between client and server.  The public API exposes a `FArcItemSlotReference`, which contains a all the data needed to reference a slot in an inventory.  All functions that refer to inventory slots take a `FArcItemSlotReference`, and for all purposes, that is the item slot.  
+Slots are the primary container for items.  The underlying replication type, `FArcItemSlot` is not exposed to the public API, but it covers the details of replication and ensuring that slots are synchronized between client and server.  The public API exposes a `FArcItemSlotReference`, which contains all the data needed to reference a slot in an inventory.  All functions that refer to inventory slots take a `FArcItemSlotReference`, and for all purposes, that is the item slot.  
 
 !!! note
     Always check if the slotref is valid before attempting to access it or pass it into an inventory.  
