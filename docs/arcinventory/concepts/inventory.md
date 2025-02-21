@@ -34,6 +34,10 @@ The types of queries can be used together to produce a query that targets exact 
 
 Slot Filters allow designers to indicate what items can be placed into the slot.  Slot Filters contain a GameplayTagQuery to search the tags on a given item, and whether or not to force that slot to contain a single stack.  If there is no TagQuery, the slot accepts all items.
 
+### Presets
+
+Inventory settings can be defined in a a data asset, `UArcInventoryComponentPreset`.  These objects allow you to define custom item slots and inventory processors in the asset, and then share that asset across multiple inventory components.  You can also add additional presets to a preset, allowing you to share a set of inventory settings across multiple presets.
+
 
 ### Notable Functions/Properties
 
