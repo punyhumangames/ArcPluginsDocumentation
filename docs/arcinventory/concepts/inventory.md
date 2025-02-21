@@ -26,9 +26,9 @@ Slots are the primary container for items.  The underlying replication type, `FA
 
 ### Slot Queries
 
-Slot Queries are the concept for access data inside of an inventory.  They are represented by `FArcInventoryQuery`.  They have two properties, `ItemTypeQuery` and `SlotTypeQuery`.  Item Query functions are generally prefixed with `Query_`, and the different Query functions allow accessing different types of slots. 
+Slot Queries are the concept for accessing data inside of an inventory.  They are represented by `FArcInventoryQuery`.   They have a number of properties to help find items in your inventory.  You can construct queries with the static functions on `FArcInventoryQuery`
 
-ItemType and SlotType can be used interchanably.  ItemType looks for the item in the slot and matches tags on the item's tags.  ItemType queries automatically fail on slots that are empty.  SlotType Query searches the tags on each slot.    
+The types of queries can be used together to produce a query that targets exact items.  ItemType looks for the item in the slot and matches tags on the item's tags.  ItemType queries automatically fail on slots that are empty.  SlotType Query searches the tags on each slot.  Item Definition queries look for items with the matching item definition.  Each search is mutually exclusive, so you can have a query that is looking for specific items in specific slots.     
 
 ### Slot Filters
 
