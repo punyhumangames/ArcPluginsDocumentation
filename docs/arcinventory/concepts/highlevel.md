@@ -37,7 +37,7 @@ Arc Inventory ships with 3 default processors: `Bag`, `Equipment`, and `Active`.
 :   Equipment Processors listen to for an event when items are placed into specifically tagged slots.  Once an item is placed into that slot, the Processor looks up it's AbilityInfo fragment matching the Equipment Tag and applies the Abilities, Attribute Sets, and Gameplay Effects to the owning actor.  
 
 `Active Processor`
-:   The Active Processor collects a list of slots that match the Active Processor's slot query.  It then manages which item slot of that list is "Active", as only one item int hat list can be active at a time.  When an item is made active, the Processor sends a "Item Active" event to the owner, and then looks up the AbilityInfo fragment matching the Active Slot on the item in that slot and applies the Abilities, Attribute Sets, and Gameplay Effects to the owning actor.  This can be thought of as the item currently held by the character in a first person shooter.
+:   The Active Processor collects a list of slots that match the Active Processor's slot query.  It then manages which item slot of that list is "Active", as only one item in that list can be active at a time.  When an item is made active, the Processor sends a "Item Active" event to the owner, and then looks up the AbilityInfo fragment matching the Active Slot on the item in that slot and applies the Abilities, Attribute Sets, and Gameplay Effects to the owning actor.  This can be thought of as the item currently held by the character in a first person shooter.
 
 Item Slots can hold any number of tags, allowing for multiple processors to match the same slot if behaviors are desired there.  
 
