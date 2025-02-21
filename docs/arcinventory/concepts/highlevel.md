@@ -66,7 +66,7 @@ Items may have `Sub Items`, which are items attached to other items.  SubItems a
 
 Item Generators are factories for creating items.  An item generator can be as simple as just tying together an Item Definition or as complex as procedurally generating an item with multiple prefixes, suffixes, and random stats.  
 
-
+If you do not plan on creating complicated item generation, randomized items, or other features that may require a more complicated Item Generator, the plugin provides `UArcInventoryModularBPFL::QuickGenerateModularItem` which will create a new item stack for you using a provided item definition.  Many games exclusively use `QuickGenerateModularItem` to handle producing every single item stack they will need!
 
 
 
