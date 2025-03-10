@@ -272,7 +272,7 @@ Secondary Weapon is similar to Primary weapon.  Give it the Active and Equiment 
 
 For Head and Body Armor, we want to set the Tags to be have the Equipment Tag, and a tag for it's name (ie `Inventory.Slot.HeadArmor`).  In the Filter, Ensure that the query is looking for `ANY(Inventory.ItemType.Passive.Head)` and Body respectively.  We also want to force single stack.
 
-The passive slots are similar, however they do not need unique tags to identify them.  Give them the Equipment Tag, and give them both the `Inventory.Slot.Passive` tag, and ensure that their filters only allow passive items (perhaps `ANY(Inventory.ItemType.Pasive) AND NOT(Inventory.ItemType.Passive.Head OR Inventory.ItemType.Passive.Body)`)  Slots do not need unique tags, and since any valid item can be placed in either slot.  If we wish to find specific items later in code, we can query for different information.  
+The passive slots are similar, however they do not need unique tags to identify them.  Give them the Equipment Tag, and give them both the `Inventory.Slot.Passive` tag, and ensure that their filters only allow passive items (perhaps `ANY(Inventory.ItemType.Passive) AND NOT(Inventory.ItemType.Passive.Head OR Inventory.ItemType.Passive.Body)`)  Slots do not need unique tags, and since any valid item can be placed in either slot.  If we wish to find specific items later in code, we can query for different information.  
 
 With this, the data is set up for this inventory layout.  Now lets create a few items to put into these slots
 
